@@ -58,10 +58,7 @@ const router = createBrowserRouter([
       {
         path: 'centerspage',
         element: <CentersPage />,
-      },
-      {
-        path: '/pobocky/:id',
-        element: <CenterDetail />,
+        children: [{ path: '/centerspage/:id', element: <CenterDetail /> }],
       },
     ],
   },
