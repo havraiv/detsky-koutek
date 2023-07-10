@@ -29,7 +29,7 @@ const App = () => {
         <Link to="/contact">Contact</Link>
         <span> | </span>
         <Link to="/centerspage">Pobočky</Link>
-        <Outlet></Outlet>
+        {location.pathname === '/' ? <Home /> : <Outlet />}
       </main>
       <footer>
         <p>Czechitas, Digitální akademie: Web</p>
