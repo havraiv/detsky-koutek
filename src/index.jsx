@@ -6,6 +6,7 @@ import {
   RouterProvider,
   Link,
   Outlet,
+  useLocation,
 } from 'react-router-dom';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
@@ -15,6 +16,7 @@ import { CentersPage } from './pages/Centerspage';
 import { CenterDetail } from './pages/Centerspage/Centerdetail';
 
 const App = () => {
+  const location = useLocation();
   return (
     <div className="container">
       <header>
