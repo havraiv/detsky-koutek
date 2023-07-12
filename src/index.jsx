@@ -4,7 +4,7 @@ import './style.css';
 import {
   createBrowserRouter,
   RouterProvider,
-  Link,
+  NavLink,
   Outlet,
   useLocation,
 } from 'react-router-dom';
@@ -24,13 +24,33 @@ const App = () => {
         <h1>Dětský koutek</h1>
       </header>
       <main>
-        <Link to="/home">Home</Link>
+        <NavLink
+          to="/home"
+          className={({ isActive }) => (isActive ? 'active' : '')}
+        >
+          Home
+        </NavLink>
         <span> | </span>
-        <Link to="/about">O nás</Link>
+        <NavLink
+          to="/about"
+          className={({ isActive }) => (isActive ? 'active' : '')}
+        >
+          O nás
+        </NavLink>
         <span> | </span>
-        <Link to="/contact">Contact</Link>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) => (isActive ? 'active' : '')}
+        >
+          Contact
+        </NavLink>
         <span> | </span>
-        <Link to="/centerspage">Pobočky</Link>
+        <NavLink
+          to="/centerspage"
+          className={({ isActive }) => (isActive ? 'active' : '')}
+        >
+          Pobočky
+        </NavLink>
         {location.pathname === '/' ? <Home /> : <Outlet />}
       </main>
       <footer>

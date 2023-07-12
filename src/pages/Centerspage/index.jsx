@@ -1,6 +1,7 @@
 import React from 'react';
 import { getAllCenters } from '../../centers';
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
+import './style.css';
 
 export const CentersPage = () => {
   return (
@@ -10,7 +11,12 @@ export const CentersPage = () => {
           return (
             <>
               <li key={center.id}>
-                <Link to={`/centerspage/${center.id}`}>{center.name}</Link>
+                <NavLink
+                  to={`/centerspage/${center.id}`}
+                  className={({ isActive }) => (isActive ? 'active' : '')}
+                >
+                  {center.name}
+                </NavLink>
               </li>
             </>
           );
